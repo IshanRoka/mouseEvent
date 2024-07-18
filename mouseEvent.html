@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(136, 80, 205);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .container{
+            display: flex;
+            gap: 2rem;
+        }
+        .mouse-event{
+            border: 1px solid white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .mouse-event h4{
+            margin: 1rem;
+            font-size: 2rem;
+        }
+        .mouse-event p{
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+    <script>
+        const container=document.querySelector(".container");
+        window.addEventListener("mousemove",(e)=>{
+            container.innerHTML=`
+            <div class="mouse-event">
+            <p>${e.clientX}</p>
+            <h4>Mouse X Prosition(px)</h4>
+        </div>
+        <div class="mouse-event">
+            <p>${e.clientY}</p>
+            <h4>Mouse Y Prosition(px)</h4>
+        </div>
+            `
+        })
+    </script>
+</body>
+</html>
